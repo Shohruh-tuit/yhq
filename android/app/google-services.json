@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "163323431856",
+    "project_id": "yhq-project",
+    "storage_bucket": "yhq-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163323431856:android:fb44436c7e27648bcfa475",
+        "android_client_info": {
+          "package_name": "com.example.yhq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163323431856-252aqut428ii25aae52b949rhc0vc48g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrIYwinhC53Ey4zQLMGTff_xOlE1yF-Ps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163323431856-252aqut428ii25aae52b949rhc0vc48g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
