@@ -12,7 +12,7 @@ class _Card6State extends State<Card6> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primary_color,
+        backgroundColor: purple_color,
       ),
       body: Center(
         child: Text("Card 6"),

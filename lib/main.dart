@@ -11,9 +11,9 @@ import 'package:yhq/cards/Card_1/inCards/inCard_1-5.dart';
 import 'package:yhq/cards/Card_2/card_2_on.dart';
 import 'package:yhq/cards/Card_2/inCards/card_2-1.dart';
 import 'package:yhq/cards/Card_2/inCards/inCard_2-1.dart';
-import 'package:yhq/cards/card_3.dart';
-import 'package:yhq/cards/card_4.dart';
-import 'package:yhq/cards/card_5.dart';
+import 'package:yhq/cards/Card_3/card_3_on.dart';
+import 'package:yhq/cards/Card_4/card_4_on.dart';
+import 'package:yhq/cards/Card_5/card_5_on.dart';
 import 'package:yhq/cards/card_6.dart';
 import 'package:yhq/cards/Card_1/inCards/inCard_1-1.dart';
 import 'package:yhq/drawer/drawer_Pages/settings_page.dart';
@@ -105,9 +105,16 @@ class MyApp extends StatelessWidget {
 
               //
 
-              Card3.id: (context) => Card3(),
-              Card4.id: (context) => Card4(),
-              Card5.id: (context) => Card5(),
+              Card_3_on.id: (context) => Card_3_on(),
+
+              //
+
+              Card_4_on.id: (context) => Card_4_on(),
+
+              //
+
+              Card_5_on.id: (context) => Card_5_on(),
+              //
               Card6.id: (context) => Card6(),
               Routes.settings: (context) => SettingsPage(),
             },

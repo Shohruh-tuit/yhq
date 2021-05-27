@@ -48,10 +48,11 @@ class _InCard2State extends State<InCard2> {
                     Text(
                       snapshot.data.docs[widget.index]['post'],
                       style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          height: 1.5,
-                          textBaseline: TextBaseline.alphabetic),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        height: 1.5,
+                        textBaseline: TextBaseline.alphabetic,
+                      ),
                       textAlign: TextAlign.justify,
                     ),
                     SizedBox(height: 30),

@@ -39,6 +39,9 @@ flutter:
     - assets/images/
     - assets/images/card_1/
     - assets/images/card_2/
+    - assets/images/card_3/
+    - assets/images/card_4/
+    - assets/images/card_5/
     - assets/images/basic_page/
     - assets/translations/
 

@@ -5,9 +5,9 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:yhq/cards/Card_1/card_1_on.dart';
 import 'package:yhq/cards/Card_2/card_2_on.dart';
-import 'package:yhq/cards/card_3.dart';
-import 'package:yhq/cards/card_4.dart';
-import 'package:yhq/cards/card_5.dart';
+import 'package:yhq/cards/Card_3/card_3_on.dart';
+import 'package:yhq/cards/Card_4/card_4_on.dart';
+import 'package:yhq/cards/Card_5/card_5_on.dart';
 import 'package:yhq/cards/card_6.dart';
 import 'package:yhq/constants/colors.dart';
 import 'package:yhq/drawer/mydrawer.dart';
@@ -23,15 +23,6 @@ class BasicPage extends StatefulWidget {
 
 class _BasicPageState extends State<BasicPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
-  final List<String> _listItem = [
-    "assets/images/browser.jpg",
-    "assets/images/traffic-sign.jpg",
-    "assets/images/road.jpg",
-    "assets/images/driving-test.jpg",
-    "assets/images/danger.jpg",
-    "assets/images/news.jpg",
-  ];
 
   bool status = false;
 
@@ -56,7 +47,7 @@ class _BasicPageState extends State<BasicPage> {
             AppBar(
               automaticallyImplyLeading: false,
               elevation: 0,
-              backgroundColor: HexColor('F2F6F9'),
+              backgroundColor: backgroundcolor1,
               title: Row(
                 children: [
                   Container(
@@ -67,7 +58,7 @@ class _BasicPageState extends State<BasicPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 8),
+                    padding: const EdgeInsets.only(left: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -85,13 +76,16 @@ class _BasicPageState extends State<BasicPage> {
                 ],
               ),
               actions: [
-                new IconButton(
-                  icon: Icon(
-                    Feather.align_right,
-                    size: 34,
-                    color: primary_color,
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: new IconButton(
+                    icon: Icon(
+                      Ionicons.md_menu,
+                      size: 40,
+                      color: primary_color,
+                    ),
+                    onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
                   ),
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
                 ),
               ],
 
@@ -185,23 +179,23 @@ class _BasicPageState extends State<BasicPage> {
         ),
       ),
       backgroundColor: HexColor('F2F6F9'),
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 8, top: 8, right: 8, bottom: 4),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 12, top: 12, right: 12),
+        child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10),
               Expanded(
                 child: GridView.count(
-                    crossAxisSpacing: 12, // cardlar orasida vertical bo'sh joy
-                    mainAxisSpacing: 12, // cardlar orasida horizontal bo'sh joy
+                    crossAxisSpacing: 20, // cardlar orasida vertical bo'sh joy
+                    mainAxisSpacing: 20, // cardlar orasida horizontal bo'sh joy
                     crossAxisCount: 2,
                     childAspectRatio: 0.85,
                     scrollDirection: Axis.vertical, // qator
                     children: [
                       _cardItem(
-                        "assets/images/basic_page/01.jpg",
+                        "assets/images/basic_page/01.png",
                         "card_1_title",
                         Card_1_on.id,
                       ),
@@ -213,17 +207,17 @@ class _BasicPageState extends State<BasicPage> {
                       _cardItem(
                         "assets/images/basic_page/03.png",
                         "card_3_title",
-                        Card3.id,
+                        Card_3_on.id,
                       ),
                       _cardItem(
-                        "assets/images/basic_page/04.jpg",
+                        "assets/images/basic_page/04.png",
                         "card_4_title",
-                        Card4.id,
+                        Card_4_on.id,
                       ),
                       _cardItem(
                         "assets/images/basic_page/05.png",
                         "card_5_title",
-                        Card5.id,
+                        Card_5_on.id,
                       ),
                       _cardItem(
                         "assets/images/basic_page/06.png",
@@ -250,12 +244,11 @@ class _BasicPageState extends State<BasicPage> {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          decoration: BoxDecoration(),
+          child: Stack(
             children: [
               Container(
-                margin: EdgeInsets.all(10),
-                height: 120,
+                // margin: EdgeInsets.all(10),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -265,18 +258,18 @@ class _BasicPageState extends State<BasicPage> {
                     borderRadius: BorderRadius.circular(8)),
               ),
               Container(
-                alignment: FractionalOffset(0, 1),
+                alignment: FractionalOffset(0, 0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
                   child: Text(
                     text.tr().length > 24
                         ? text.tr().substring(0, 24) + "..."
                         : text.tr(),
                     textAlign: TextAlign.left,
                     style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),

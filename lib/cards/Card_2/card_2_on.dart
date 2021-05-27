@@ -27,8 +27,8 @@ class _Card_2_onState extends State<Card_2_on> {
       appBar: AppBar(
         backgroundColor: green_color,
         title: Text(
-          "Yo'l harakati qoidalari",
-        ),
+          "card_2_title",
+        ).tr(),
       ),
       body: Container(
         child: ListView(
@@ -36,55 +36,55 @@ class _Card_2_onState extends State<Card_2_on> {
             _card(
               "I-bo'lim",
               "Ogohlantiruvchi belgilar",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card2.id,
             ),
             _card(
               "II-bo'lim",
               "Imtiyoz belgilari",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card1_2.id,
             ),
             _card(
               "III-bo'lim",
               "Taqiqlovchi belgilar",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card1_2.id,
             ),
             _card(
               "IV-bo'lim",
               "Buyuruvchi belgilar",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card1_2.id,
             ),
             _card(
               "V-bo'lim",
               "Axborot-ko‘rsatgich belgilari",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card1_2.id,
             ),
             _card(
               "VI-bo'lim",
               "Servis belgilari",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card1_2.id,
             ),
             _card(
               "VII-bo'lim",
               "Qo‘shimcha axborot belgilari",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card1_2.id,
             ),
             _card(
               "",
               "Transport svetoforlari",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card1_2.id,
             ),
             _card(
               "",
               "Piyodalar svetoforlari",
-              "assets/images/card_2/Card2.jpg",
+              "assets/images/card_2/Card2.png",
               Card1_2.id,
             ),
           ],

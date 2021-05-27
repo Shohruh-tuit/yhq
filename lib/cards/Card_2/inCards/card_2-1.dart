@@ -32,7 +32,7 @@ class _Card2State extends State<Card2> {
             if (!snapshot.hasData)
               return Center(child: CircularProgressIndicator());
             return ListView.builder(
-              itemCount: 30, // number of list
+              itemCount: 46, // number of list
               itemBuilder: (context, index) {
                 return Container(
                   decoration: BoxDecoration(
@@ -85,9 +85,11 @@ class _Card2State extends State<Card2> {
                         width: 50,
                         // margin: EdgeInsets.only(bottom: 8),
                         child: Image.network(
-                          !snapshot.hasData
-                              ? Center(child: CircularProgressIndicator())
-                              : snapshot.data.docs[index]['imageUrl'],
+                          snapshot.hasData
+                              ? snapshot.data.docs[index]['imageUrl']
+                              : CircularProgressIndicator(
+                                  backgroundColor: primary_color,
+                                ),
                         ),
                       ),
                       trailing: Icon(
