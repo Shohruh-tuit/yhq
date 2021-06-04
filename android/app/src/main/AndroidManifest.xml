@@ -2,6 +2,9 @@
     package="com.example.yhq">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
    <application
         android:label="yhq"
         android:icon="@mipmap/ic_launcher">

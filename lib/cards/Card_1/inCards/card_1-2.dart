@@ -29,90 +29,105 @@ class _Card1_2State extends State<Card1_2> {
               .collection('Haydovchilarning_umumiy_majburiyatlari')
               .snapshots(),
           builder: (context, snapshot) {
-            if (!snapshot.hasData) return Text("Loading data.. Please wait..");
-            return ListView.builder(
-              itemCount: 6, // number of list
-              itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.04),
-                        spreadRadius: 0,
-                        blurRadius: 80,
-                        offset: Offset(0, 100), // changes position of shadow
-                      ),
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.0327),
-                        spreadRadius: 0,
-                        blurRadius: 33.4,
-                        offset: Offset(0, 41.78), // changes position of shadow
-                      ),
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.0288),
-                        spreadRadius: 0,
-                        blurRadius: 17.87,
-                        offset: Offset(0, 22.34), // changes position of shadow
-                      ),
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.026),
-                        spreadRadius: 0,
-                        blurRadius: 10.02,
-                        offset: Offset(0, 12.52), // changes position of shadow
-                      ),
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.0229),
-                        spreadRadius: 0,
-                        blurRadius: 5.32,
-                        offset: Offset(0, 6.65), // changes position of shadow
-                      ),
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.0176),
-                        spreadRadius: 0,
-                        blurRadius: 2.21,
-                        offset: Offset(0, 2.77), // changes position of shadow
-                      ),
-                    ],
-                    color: Colors.white,
-                  ),
-                  margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
-                  child: InkWell(
-                    child: ListTile(
-                      trailing: Icon(
-                        Icons.chevron_right,
-                        color: blue_color,
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(bottom: 8),
-                        child: Text(
-                          snapshot.data.docs[index]['post_number'] != false
-                              ? snapshot.data.docs[index]['post_number']
-                                      .toString() +
-                                  "-qoida"
-                              : "",
-                          style: TextStyle(
-                              color: blue_color,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 2),
+            if (!snapshot.hasData)
+              return Center(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                      "iltimos ma'lumotlarni olish uchun internetingizni yoqing!"),
+                  SizedBox(height: 10),
+                  CircularProgressIndicator(),
+                ],
+              ));
+            return Expanded(
+              child: ListView.builder(
+                itemCount: 6, // number of list
+                itemBuilder: (context, index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.04),
+                          spreadRadius: 0,
+                          blurRadius: 80,
+                          offset: Offset(0, 100), // changes position of shadow
+                        ),
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.0327),
+                          spreadRadius: 0,
+                          blurRadius: 33.4,
+                          offset:
+                              Offset(0, 41.78), // changes position of shadow
+                        ),
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.0288),
+                          spreadRadius: 0,
+                          blurRadius: 17.87,
+                          offset:
+                              Offset(0, 22.34), // changes position of shadow
+                        ),
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.026),
+                          spreadRadius: 0,
+                          blurRadius: 10.02,
+                          offset:
+                              Offset(0, 12.52), // changes position of shadow
+                        ),
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.0229),
+                          spreadRadius: 0,
+                          blurRadius: 5.32,
+                          offset: Offset(0, 6.65), // changes position of shadow
+                        ),
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.0176),
+                          spreadRadius: 0,
+                          blurRadius: 2.21,
+                          offset: Offset(0, 2.77), // changes position of shadow
+                        ),
+                      ],
+                      color: Colors.white,
+                    ),
+                    margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: InkWell(
+                      child: ListTile(
+                        trailing: Icon(
+                          Icons.chevron_right,
+                          color: blue_color,
+                        ),
+                        title: Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Text(
+                            snapshot.data.docs[index]['post_number'] != false
+                                ? snapshot.data.docs[index]['post_number']
+                                        .toString() +
+                                    "-qoida"
+                                : "",
+                            style: TextStyle(
+                                color: blue_color,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 2),
+                          ),
+                        ),
+                        subtitle: Text(
+                          snapshot.data.docs[index]['post']
+                                  .toString()
+                                  .substring(0, 39) +
+                              "...",
                         ),
                       ),
-                      subtitle: Text(
-                        snapshot.data.docs[index]['post']
-                                .toString()
-                                .substring(0, 39) +
-                            "...",
-                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => InCard1_2(index)));
+                      },
                     ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => InCard1_2(index)));
-                    },
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             );
           },
         ),

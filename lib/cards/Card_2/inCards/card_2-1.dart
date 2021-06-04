@@ -1,9 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:yhq/cards/Card_1/inCards/inCard_1-1.dart';
 import 'package:yhq/cards/Card_2/inCards/inCard_2-1.dart';
 import 'package:yhq/constants/colors.dart';
+import 'package:yhq/utilities/utility_sharedpref.dart';
 
 class Card2 extends StatefulWidget {
   static final String id = "card_2";
@@ -19,7 +21,7 @@ class _Card2State extends State<Card2> {
       appBar: AppBar(
         backgroundColor: green_color,
         title: Text(
-          "Yo'l harakati qoidalari",
+          "Ogohlantiruvchi belgilar",
         ),
       ),
       body: Container(
@@ -83,13 +85,14 @@ class _Card2State extends State<Card2> {
                       leading: Container(
                         height: 50,
                         width: 50,
+
                         // margin: EdgeInsets.only(bottom: 8),
-                        child: Image.network(
-                          snapshot.hasData
-                              ? snapshot.data.docs[index]['imageUrl']
-                              : CircularProgressIndicator(
-                                  backgroundColor: primary_color,
-                                ),
+                        child: CachedNetworkImage(
+                          imageUrl: snapshot.data.docs[index]['imageUrl'],
+                          placeholder: (context, url) =>
+                              CircularProgressIndicator(
+                            backgroundColor: green_color,
+                          ),
                         ),
                       ),
                       trailing: Icon(

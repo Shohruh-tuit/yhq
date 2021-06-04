@@ -11,6 +11,7 @@ import 'package:yhq/cards/Card_5/card_5_on.dart';
 import 'package:yhq/cards/card_6.dart';
 import 'package:yhq/constants/colors.dart';
 import 'package:yhq/drawer/mydrawer.dart';
+import 'package:yhq/pages/search_page.dart';
 
 class BasicPage extends StatefulWidget {
   const BasicPage({
@@ -77,103 +78,33 @@ class _BasicPageState extends State<BasicPage> {
               ),
               actions: [
                 Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: new IconButton(
+                    icon: Icon(
+                      Ionicons.md_search,
+                      size: 36,
+                      color: primary_color,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SearchPage()));
+                    },
+                  ),
+                ),
+                Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: new IconButton(
                     icon: Icon(
                       Ionicons.md_menu,
-                      size: 40,
+                      size: 36,
                       color: primary_color,
                     ),
                     onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
                   ),
                 ),
               ],
-
-              // actions: [
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Switch(
-              //       value: isSwitched,
-              //       onChanged: (value) {
-              //         setState(
-              //           () {
-              //             isSwitched = value;
-              //             print(isSwitched);
-              //           },
-              //         );
-              //       },
-              //       activeTrackColor: Colors.yellow,
-              //       activeColor: Colors.green,
-              //     ),
-              //     context.locale = Locale('uz', 'UZ');
-              //     context.locale = Locale('en', 'US');
-
-              //       // Container(
-              //       //   height: 30,
-              //       //   width: 30,
-              //       //   child: Column(
-              //       //     children: <Widget>[
-              //       //       ListTile(
-              //       //         title: const Text('Lafayette'),
-              //       //         leading: Radio(
-              //       //           value: status,
-              //       //           groupValue: null,
-              //       //           onChanged: (val) {
-              //       //             setState(() {
-              //       //               status = val;
-              //       //             });
-              //       //           },
-              //       //         ),
-              //       //       ),
-              //       //       ListTile(
-              //       //         title: const Text('Thomas Jefferson'),
-              //       //         leading: Radio(
-              //       //           value: status,
-              //       //           groupValue: null,
-              //       //           onChanged: (val) {
-              //       //             setState(() {
-              //       //               status = val;
-              //       //             });
-              //       //           },
-              //       //         ),
-              //       //       ),
-              //       //     ],
-              //       //   ),
-              //       // ),
-
-              // Padding(
-              //   padding: const EdgeInsets.only(right: 8),
-              //   child: FlutterSwitch(
-              //     activeText: "O'z",
-              //     inactiveText: "Ўзб",
-              //     value: status,
-              //     valueFontSize: 10.0,
-              //     width: 60,
-              //     borderRadius: 30.0,
-              //     showOnOff: true,
-              //     activeColor: Colors.blue,
-              //     inactiveColor: primary_color,
-              //     onToggle: (val) {
-              //       setState(() {
-              //         status = val;
-              //         language();
-              //       });
-              //     },
-              //   ),
-              // ),
-
-              //       // Padding(
-              //       //   padding: const EdgeInsets.only(right: 10),
-              //       //   child: Icon(
-              //       //     FontAwesome.star,
-              //       //     color: HexColor('FF9529'),
-              //       //     size: 30,
-              //       //   ),
-              //       // ),
-              //     ],
-              //   ),
-              // ],
             ),
           ],
         ),
@@ -263,7 +194,7 @@ class _BasicPageState extends State<BasicPage> {
                   padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
                   child: Text(
                     text.tr().length > 24
-                        ? text.tr().substring(0, 24) + "..."
+                        ? text.tr().substring(0, 24) + ".."
                         : text.tr(),
                     textAlign: TextAlign.left,
                     style: TextStyle(

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:yhq/constants/colors.dart';
@@ -60,13 +61,9 @@ class _InCard2State extends State<InCard2> {
                       child: Container(
                         height: 200,
                         width: 200,
-                        child: Image.network(
-                          !snapshot.hasData
-                              ? Container(
-                                  child: Text("aaa"),
-                                )
-                              : snapshot.data.docs[widget.index]['imageUrl'],
-                          fit: BoxFit.contain,
+                        child: CachedNetworkImage(
+                          imageUrl: snapshot.data.docs[widget.index]
+                              ['imageUrl'],
                         ),
                       ),
                     ),

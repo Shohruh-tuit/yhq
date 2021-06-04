@@ -48,7 +48,6 @@ class _VideoPageState extends State<VideoPage> {
 
   Channel _channel;
 
-  bool _isLoading = false;
   @override
   void initState() {
     checkInternet();

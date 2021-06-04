@@ -21,6 +21,7 @@ import 'package:yhq/home/home_page.dart';
 import 'package:yhq/pages/basic_page.dart';
 import 'package:yhq/pages/favourite_page.dart';
 import 'package:yhq/pages/video_page.dart';
+import 'package:yhq/routes/connectionstatus.dart';
 import 'package:yhq/routes/routes.dart';
 import 'cards/Card_1/inCards/card_1-3.dart';
 import 'cards/Card_1/inCards/card_1-4.dart';
@@ -28,6 +29,9 @@ import 'cards/Card_1/inCards/inCard_1-3.dart';
 import 'cards/Card_1/inCards/inCard_1-4.dart';
 
 void main() async {
+  ConnectionStatusSingleton connectionStatus =
+      ConnectionStatusSingleton.getInstance();
+  connectionStatus.initialize();
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();

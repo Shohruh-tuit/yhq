@@ -20,10 +20,9 @@ class _HomePageState extends State<HomePage> {
   int _selectedItem = 0;
   var _pages = [
     BasicPage(),
-    SearchPage(),
     VideoPage(),
     FavouritePage(),
-    SmS(),
+    SendSms(),
     // ...
   ];
 
@@ -45,23 +44,19 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Ionicons.ios_home, size: 24),
+            icon: Icon(Ionicons.ios_home, size: 26),
             title: Text("Feed"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Ionicons.md_search, size: 24),
-            title: Text("Search"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Ionicons.ios_videocam, size: 24),
+            icon: Icon(Ionicons.ios_videocam, size: 26),
             title: Text("Video"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Ionicons.ios_star, size: 24),
+            icon: Icon(Ionicons.ios_star, size: 26),
             title: Text("Favourite"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Ionicons.ios_send, size: 24),
+            icon: Icon(Ionicons.ios_send, size: 26),
             title: Text("SmS"),
           ),
         ],

@@ -31,7 +31,19 @@ class _Card1_3State extends State<Card1_3> {
                   'Yo‘l-transport_hodisasi_sodir_bo‘lganda_haydovchining_majburiyatlari')
               .snapshots(),
           builder: (context, snapshot) {
-            if (!snapshot.hasData) return Text("Loading data.. Please wait..");
+            if (!snapshot.hasData)
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                        "iltimos ma'lumotlarni olish uchun internetingizni yoqing!"),
+                    SizedBox(height: 10),
+                    CircularProgressIndicator(),
+                  ],
+                ),
+              );
+            ;
             return ListView.builder(
               itemCount: 2, // number of list
               itemBuilder: (context, index) {

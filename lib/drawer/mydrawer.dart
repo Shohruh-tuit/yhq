@@ -47,7 +47,7 @@ class MyDrawer extends StatelessWidget {
                     onPressed: () {
                       _launchURL(_url);
                     },
-                    icon: Icon(FontAwesome.facebook_official),
+                    icon: Icon(FontAwesome.facebook),
                     color: Colors.blue[700],
                   ),
                   SizedBox(width: 10),
